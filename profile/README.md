@@ -14,7 +14,7 @@ what a good analyst does before speaking.</em></sub>
 
 <br>
 
-![capercaillie + signal graph](https://raw.githubusercontent.com/gledach/.github/main/profile/avatar.jpg)
+![capercaillie + signal graph](https://avatars.githubusercontent.com/u/277326509)
 
 </div>
 
@@ -23,18 +23,17 @@ what a good analyst does before speaking.</em></sub>
 ### live dashboard
 
 ```
-╭───────────────────  competitive intelligence  ───────────────────╮
-│                                                                   │
-│   signal sources     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░  8 streams live    │
-│   competitors        ▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░  17 across voice-AI│
-│   signals in turso   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  1,398 & counting  │
-│   llm spend / mo     ▓▓░░░░░░░░░░░░░░░░░░░░░░  ~$20              │
-│   operators          ▓░░░░░░░░░░░░░░░░░░░░░░░  1                  │
-│                                                                   │
-│   > cat plans/*.md | grep -c READY                    11 shipped  │
-│   > cat commits/main | grep -c verified               ✓ all       │
-│                                                                   │
-╰───────────────────────────────────────────────────────────────────╯
+╭─ competitive intelligence ──────────────────────────────────────╮
+│                                                                  │
+│    8        signal sources live                                  │
+│    17       competitors tracked across voice-AI                  │
+│    1,398    signals in turso (and counting)                      │
+│    $20/mo   llm spend at current cadence                         │
+│    1        operators                                            │
+│                                                                  │
+│    11 plans shipped  ·  all commits verified  ·  0 data lost     │
+│                                                                  │
+╰──────────────────────────────────────────────────────────────────╯
 ```
 
 ---
