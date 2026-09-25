@@ -20,79 +20,97 @@ what a good analyst does before speaking.</em></sub>
 
 ---
 
-### live dashboard
-
-```
-╭───────────────────  competitive intelligence  ───────────────────╮
-│                                                                   │
-│   signal sources     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░  8 streams live    │
-│   competitors        ▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░  17 across voice-AI│
-│   signals in turso   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  1,398 & counting  │
-│   llm spend / mo     ▓▓░░░░░░░░░░░░░░░░░░░░░░  ~$20              │
-│   operators          ▓░░░░░░░░░░░░░░░░░░░░░░░  1                  │
-│                                                                   │
-│   > cat plans/*.md | grep -c READY                    11 shipped  │
-│   > cat commits/main | grep -c verified               ✓ all       │
-│                                                                   │
-╰───────────────────────────────────────────────────────────────────╯
-```
+<sub><em>This repo holds the organisation profile. The rendered version is at
+<a href="https://github.com/gledach">github.com/gledach</a> — edit
+<code>profile/README.md</code>, not this file, and keep the two in step.</em></sub>
 
 ---
 
-### 🔭 featured
+### what this is
 
-**[cia](https://github.com/gledach/cia)** — *Competitive Intelligence Agent*
+Tools that turn **public noise into structured signal** — and hand it to an agent
+rather than to a dashboard nobody opens.
 
-A single-operator CI platform for the voice-AI category. Tracks 17 competitors
-across RSS, Algolia HN, YouTube transcripts, Tavily search, certificate-transparency
-logs, sitemap + robots diffs, and Google Trends. Classifies with **Claude Haiku**,
-synthesizes battlecards with **Claude Sonnet**, red-teams its own pipeline with
-**Claude Opus**. Stores everything in **Turso** (hosted libSQL); serves a
-Linear-style dashboard at `localhost:5180`. Built over weekends. Runs every
-30 minutes. ~$20/mo.
-
-```
- ┌─────────────────────┐    ┌────────────┐    ┌───────────────────┐
- │  ingest · 8 sources │───▶│   turso    │───▶│  battlecards +    │
- │  RSS · HN · YT      │    │  (libSQL)  │    │  Linear dashboard │
- │  certs · sitemaps   │    └─────┬──────┘    └───────────────────┘
- │  trends · Tavily    │          │
- └─────────────────────┘          ▼
-                            ┌─────────────┐
-                            │  analyst    │   /scan  /deep  /gap
-                            │  (Opus 4.7) │   /outside  /brief
-                            └─────────────┘
-```
+The pattern is the same every time: watch a set of sources continuously, score and
+attribute what comes back, notice when several independent sources say the same thing,
+and expose the result as data something else can query. Competitors are the first
+subject. They are not the only one that shape fits.
 
 ---
 
-### 🛠 stack
+### 🔭 signal — our first public repo
+
+**[gledach/signals](https://github.com/gledach/signals)** · **[see it live →](https://signal-v1.gledach.de)**
+
+*Competitive intelligence your agents can query.*
+
+Watches a market, turns public noise into scored and attributed signals, exposes them
+over **MCP** — eight tools and `signal://` resources, so Claude Code or any MCP client
+can ask "what changed at the tools we track this week?" and get structured data back.
+The dashboard is one client, not the product.
 
 ```
- runtime  ·  Node.js (zero-dep bias) · Python where ML needs it
- ai       ·  Claude via OpenRouter  · Haiku · Sonnet · Opus  · BYOK
- data     ·  Turso · libSQL · SQLite · Markdown-in-git
- ux       ·  Linear-inspired dense dashboards · Playwright visual-regression
- shell    ·  bash + PowerShell (Windows, corporate-TLS hardened)
+ ┌──────────────────────────┐   ┌────────────┐   ┌──────────────────────┐
+ │  ingest                  │──▶│   turso    │──▶│  battlecards         │
+ │  news · HN · reddit      │   │  (libSQL)  │   │  analyst briefs      │
+ │  youtube · github        │   └─────┬──────┘   │  convergence alerts  │
+ │  certs · sitemaps        │         │          └──────────────────────┘
+ │  trends · search · email │         ▼
+ └──────────────────────────┘   ┌───────────┐    ┌──────────────────────┐
+                                │  analyst  │    │  MCP surface         │
+                                │  /scan    │    │  8 tools · 30 res.   │
+                                │  /deep    │    │  read-only by        │
+                                │  /gap     │    │  default             │
+                                └───────────┘    └──────────────────────┘
+```
+
+**The unit that matters is a convergence** — not a mention. One correlated pattern that
+several independent publishers corroborate, scored from its own evidence, with the rule
+that fired it stated inline. Ten raw mentions of the same press release are one event.
+
+```
+ 13       AI coding agents + app builders tracked, across two segments
+ 13       signal sources, from RSS to certificate-transparency logs
+ 2,600+   signals in turso
+ 8        MCP tools · read-only until you say otherwise
+ 3        runtime dependencies · no build step · clone and run offline
+```
+
+Clone it, run `npm run db:migrate`, and you get a populated dashboard with no account
+and no API key. Point it at your own market by editing one gitignored file.
+
+---
+
+### 🛠 how it is built
+
+```
+ runtime  ·  Node.js, zero-dep bias — three runtime dependencies, no build step
+ ai       ·  Claude via OpenRouter · Haiku triage · Sonnet synthesis · Opus depth · BYOK
+ data     ·  Turso · libSQL · SQLite · markdown-in-git
+ agents   ·  MCP over stdio · read-only by default · spend ceiling shared with cron
+ ux       ·  dense, Linear-inspired dashboards · Playwright visual checks
 ```
 
 ---
 
 ### 🧭 operating principles
 
-> **local-first.** laptop is the runtime. cloud is for sharing state.<br>
-> **single-operator.** no multi-tenancy until there's a second tenant.<br>
+> **local-first.** the laptop is the runtime. cloud is for sharing state.<br>
+> **convergence over alerts.** one correlated insight beats ten raw mentions.<br>
 > **signal over polish.** output quality before dashboard aesthetics — but both.<br>
-> **convergence over alerts.** one correlated insight > ten raw mentions.<br>
-> **idempotent retry, not dual-write.** retry until it sticks; don't split sources of truth.
+> **say what you cannot see.** every tool ships an honest audit of its own blind spots.<br>
+> **read-only until asked.** an agent does not spend your money because it found a button.<br>
+> **idempotent retry, not dual-write.** retry until it sticks; never split the source of truth.
 
 ---
 
 <div align="center">
 <sub>
-<a href="mailto:fizikaneri@gmail.com">email</a>
+<a href="https://github.com/gledach/signals">signal</a>
 &nbsp;·&nbsp;
-<a href="https://github.com/gledach/cia">the agent</a>
+<a href="https://signal-v1.gledach.de">live demo</a>
+&nbsp;·&nbsp;
+<a href="mailto:hi@aleksandarperisic.com">email</a>
 &nbsp;·&nbsp;
 <code>if it ships to turso, it shipped.</code>
 </sub>
