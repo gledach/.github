@@ -34,7 +34,7 @@ subject. They are not the only one that shape fits.
 
 ### 🔭 signal — our first public repo
 
-**[gledach/signals](https://github.com/gledach/signals)** · **[see it live →](https://signal-v1.gledach.de)**
+**[gledach/signals](https://github.com/gledach/signals)** · **[see it live →](https://signal.gledach.de)**
 
 *Competitive intelligence your agents can query.*
 
@@ -102,7 +102,7 @@ and no API key. Point it at your own market by editing one gitignored file.
 <sub>
 <a href="https://github.com/gledach/signals">signal</a>
 &nbsp;·&nbsp;
-<a href="https://signal-v1.gledach.de">live demo</a>
+<a href="https://signal.gledach.de">live demo</a>
 &nbsp;·&nbsp;
 <a href="mailto:hi@aleksandarperisic.com">email</a>
 &nbsp;·&nbsp;
