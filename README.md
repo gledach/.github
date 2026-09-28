@@ -1,20 +1,9 @@
 <div align="center">
 
-```
-            __          __           __
-    ____ _ / /___  ____/ /___ ______/ /_
-   / __ `// // _ \/ __  // __ `/ ___/ __ \
-  / /_/ // //  __// /_/ // /_/ / /__/ / / /
-  \__, //_/ \___/ \__,_/ \__,_/\___/_/ /_/
- /____/
-```
+![capercaillie + signal graph](https://raw.githubusercontent.com/gledach/.github/main/profile/avatar.jpg)
 
 <sub><em>gledati (slav.) — to watch. <br>
 what a good analyst does before speaking.</em></sub>
-
-<br>
-
-![capercaillie + signal graph](https://raw.githubusercontent.com/gledach/.github/main/profile/avatar.jpg)
 
 </div>
 
@@ -105,6 +94,16 @@ and no API key. Point it at your own market by editing one gitignored file.
 ---
 
 <div align="center">
+
+```
+            __          __           __
+    ____ _ / /___  ____/ /___ ______/ /_
+   / __ `// // _ \/ __  // __ `/ ___/ __ \
+  / /_/ // //  __// /_/ // /_/ / /__/ / / /
+  \__, //_/ \___/ \__,_/ \__,_/\___/_/ /_/
+ /____/
+```
+
 <sub>
 <a href="https://github.com/gledach/signals">signal</a>
 &nbsp;·&nbsp;
