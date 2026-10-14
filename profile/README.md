@@ -2,7 +2,7 @@
 
 ![capercaillie + signal graph](https://avatars.githubusercontent.com/u/277326509)
 
-<sub><em>gledati (slav.) — to watch. <br>
+<sub><em>gledati (slav.): to watch. <br>
 what a good analyst does before speaking.</em></sub>
 
 </div>
@@ -11,26 +11,39 @@ what a good analyst does before speaking.</em></sub>
 
 ### what this is
 
-Tools that turn **public noise into structured signal** — and hand it to an agent
-rather than to a dashboard nobody opens.
+A shelf of free tools. Each one watches something public and hands back an answer.
 
-The pattern is the same every time: watch a set of sources continuously, score and
-attribute what comes back, notice when several independent sources say the same thing,
-and expose the result as data something else can query. Competitors are the first
-subject. They are not the only one that shape fits.
+Same author, different shapes. They share no stack, no interface and no release cadence.
+What they share is the promise: free, MIT licensed, installable, running on your own
+machine, no account to start, and a written audit of what each one cannot see.
+
+Five of twelve slots are filled.
+
+| | Tool | Watches | Tells you |
+|---|---|---|---|
+| 01 | **[signal](https://github.com/gledach/signals)** | Thirteen public sources around whichever market you name | What changed, scored and attributed, over MCP |
+| 02 | [signal-patterns](https://github.com/gledach/signal-patterns) | Nothing. It is the written reasoning | What is watchable, what it costs, how to build it |
+| 03 | [whenrun](https://github.com/gledach/whenrun) | Day-ahead power prices and renewable share | The cheapest or greenest window, then starts the job in it |
+| 04 | [phonehome](https://github.com/gledach/phonehome) | Every DNS query on your own network | Which device talked where, and when that changed |
+| 05 | [recall](https://github.com/gledach/recall) | Four public registers, against a list of what you own | Which of your things has a notice, and how sure the match is |
+| 06 | `[UNNAMED]` | `[UNDECIDED]` | `[UNDECIDED]` |
+
+Slot 06 is empty and stays written that way until something runs there. Is there
+something you keep checking by hand that a tool could watch for you?
+**[Ask for it in the open](https://github.com/gledach/requests).**
 
 ---
 
-### 🔭 signal — our first public repo
+### signal, in focus
 
-**[gledach/signals](https://github.com/gledach/signals)** · **[see it live →](https://signal.gledach.de)**
+**[gledach/signals](https://github.com/gledach/signals)** · **[see it live](https://signal.gledach.de)**
 
-*Competitive intelligence your agents can query.*
+*Track anyone. Compare anyone. On your own machine.*
 
-Watches a market, turns public noise into scored and attributed signals, exposes them
-over **MCP** — eight tools and `signal://` resources, so Claude Code or any MCP client
-can ask "what changed at the tools we track this week?" and get structured data back.
-The dashboard is one client, not the product.
+Anyone means any company you name in one file. signal watches what they publish, scores
+and attributes it, correlates it into convergences that several independent publishers
+corroborate, and answers your agent over **MCP** rather than handing a person one more
+dashboard to read. The dashboard is one client, not the product.
 
 ```
  ┌──────────────────────────┐   ┌────────────┐   ┌──────────────────────┐
@@ -41,49 +54,49 @@ The dashboard is one client, not the product.
  │  trends · search · email │         ▼
  └──────────────────────────┘   ┌───────────┐    ┌──────────────────────┐
                                 │  analyst  │    │  MCP surface         │
-                                │  /scan    │    │  8 tools · 30 res.   │
-                                │  /deep    │    │  read-only by        │
-                                │  /gap     │    │  default             │
+                                │  /scan    │    │  8 tools, read only  │
+                                │  /deep    │    │  until you say       │
+                                │  /gap     │    │  otherwise           │
                                 └───────────┘    └──────────────────────┘
 ```
 
-**The unit that matters is a convergence** — not a mention. One correlated pattern that
+**The unit that matters is a convergence, not a mention.** One correlated pattern that
 several independent publishers corroborate, scored from its own evidence, with the rule
 that fired it stated inline. Ten raw mentions of the same press release are one event.
 
 ```
- 13       AI coding agents + app builders tracked, across two segments
- 13       signal sources, from RSS to certificate-transparency logs
- 2,600+   signals in turso
- 8        MCP tools · read-only until you say otherwise
- 3        runtime dependencies · no build step · clone and run offline
+ 13       AI coding agents and app builders tracked, across two segments
+ 13       signal sources, from RSS to certificate transparency logs
+ 2,600+   signals in the deployment behind the live preview
+ 8        MCP tools, read only until you say otherwise
+ 3        runtime dependencies, no build step, clone and run offline
 ```
 
-Clone it, run `npm run db:migrate`, and you get a populated dashboard with no account
-and no API key. Point it at your own market by editing one gitignored file.
+Clone it, run `npm run db:migrate`, and you have a populated dashboard with no account and
+no API key. Point it at your own companies by editing one gitignored file.
 
 ---
 
-### 🛠 how it is built
+### how it is built
 
 ```
- runtime  ·  Node.js, zero-dep bias — three runtime dependencies, no build step
- ai       ·  Claude via OpenRouter · Haiku triage · Sonnet synthesis · Opus depth · BYOK
- data     ·  Turso · libSQL · SQLite · markdown-in-git
- agents   ·  MCP over stdio · read-only by default · spend ceiling shared with cron
- ux       ·  dense, Linear-inspired dashboards · Playwright visual checks
+ runtime  ·  Node 22, zero dependency bias. three runtime deps, no build step
+ storage  ·  libSQL. a local file by default, hosted only when you want it shared
+ ai       ·  bring your own key. without one, a keyword classifier and no briefs
+ agents   ·  MCP over stdio. read only by default, spend ceiling shared with cron
+ tests    ·  offline, against fixtures captured from the real sources
 ```
 
 ---
 
-### 🧭 operating principles
+### operating principles
 
-> **local-first.** the laptop is the runtime. cloud is for sharing state.<br>
+> **local first.** the laptop is the runtime. cloud is for sharing state between machines you own.<br>
 > **convergence over alerts.** one correlated insight beats ten raw mentions.<br>
-> **signal over polish.** output quality before dashboard aesthetics — but both.<br>
 > **say what you cannot see.** every tool ships an honest audit of its own blind spots.<br>
-> **read-only until asked.** an agent does not spend your money because it found a button.<br>
-> **idempotent retry, not dual-write.** retry until it sticks; never split the source of truth.
+> **read only until asked.** an agent does not spend your money because it found a button.<br>
+> **generated text is labelled.** model output is marked as model output.<br>
+> **idempotent retry, not dual write.** retry until it sticks. never split the source of truth.
 
 ---
 
@@ -99,11 +112,13 @@ and no API key. Point it at your own market by editing one gitignored file.
 ```
 
 <sub>
-<a href="https://github.com/gledach/signals">signal</a>
+<a href="https://gledach.de">gledach.de</a>
 &nbsp;·&nbsp;
 <a href="https://signal.gledach.de">live demo</a>
 &nbsp;·&nbsp;
-<a href="mailto:hi@aleksandarperisic.com">email</a>
+<a href="https://github.com/gledach/requests">request a tool</a>
+&nbsp;·&nbsp;
+<a href="https://www.linkedin.com/company/gledach/">linkedin</a>
 &nbsp;·&nbsp;
 <code>if it ships to turso, it shipped.</code>
 </sub>
