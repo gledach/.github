@@ -14,7 +14,7 @@ MIT licensed · runs on your machine · no account to start · each ships an aud
 
 ### the tools
 
-Six of twelve slots are filled.
+Seven of twelve slots are filled.
 
 | | Tool | Watches | Tells you |
 |---|---|---|---|
@@ -24,9 +24,10 @@ Six of twelve slots are filled.
 | 04 | [phonehome](https://github.com/gledach/phonehome) | Every DNS query on your own network | Which device talked where, and when that changed |
 | 05 | [recall](https://github.com/gledach/recall) | Four public registers, against a list of what you own | Which of your things has a notice, and how sure the match is |
 | 06 | [talk](https://github.com/gledach/talk) | TCP connections from local coding agents, on Windows | Which API host each one reached, and whether the count is climbing |
-| 07 | `[UNNAMED]` | `[UNDECIDED]` | `[UNDECIDED]` |
+| 07 | [snare](https://github.com/gledach/snare) | Hooks a coding agent runs at startup, and editor tasks that run when a folder opens | When that set changes. It does not delete a hook |
+| 08 | `[UNNAMED]` | `[UNDECIDED]` | `[UNDECIDED]` |
 
-Slot 07 is empty and stays written that way until something runs there. Is there
+Slot 08 is empty and stays written that way until something runs there. Is there
 something you keep checking by hand that a tool could watch for you?
 **[Ask for it in the open](https://github.com/gledach/requests).**
 
@@ -39,11 +40,11 @@ What they share is the promise: free, MIT licensed, installable, running on your
 machine, no account to start, and a written audit of what each one cannot see.
 
 The command is `gledach-<tool>`. The shelf word stays the product name. `npm link`
-inside a clone puts `gledach-whenrun`, `gledach-phonehome`, `gledach-recall` or
-`gledach-talk` on your PATH. Without a link, `node bin/<tool>.mjs` is the same program.
+inside a clone puts `gledach-whenrun`, `gledach-phonehome`, `gledach-recall`,
+`gledach-talk` or `gledach-snare` on your PATH. Without a link, `node bin/<tool>.mjs` is the same program.
 signal's package name is `gledach-signal` and its commands stay `npm run` inside the
 clone. signal-patterns has no command. Nothing named `whenrun`, `phonehome`, `recall`,
-`signal`, `signals` or `talk` is installed. Those names already belong to other packages
+`signal`, `signals`, `talk` or `snare` is installed. Those names already belong to other packages
 or programs. The pages are on [gledach.de](https://gledach.de).
 
 ---
