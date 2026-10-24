@@ -1,21 +1,18 @@
 <div align="center">
 
-![capercaillie + signal graph](https://avatars.githubusercontent.com/u/277326509)
+# gledach
 
-<sub><em>gledati (slav.): to watch. <br>
-what a good analyst does before speaking.</em></sub>
+### Free tools that watch something public — and hand you the answer.
+
+MIT licensed · runs on your machine · no account to start · each ships an audit of what it cannot see
+
+**[▶ signal live demo](https://signal.gledach.de)** &nbsp;·&nbsp; **[browse the tools ↓](#the-tools)** &nbsp;·&nbsp; **[request one](https://github.com/gledach/requests)**
 
 </div>
 
 ---
 
-### what this is
-
-A shelf of free tools. Each one watches something public and hands back an answer.
-
-Same author, different shapes. They share no stack, no interface and no release cadence.
-What they share is the promise: free, MIT licensed, installable, running on your own
-machine, no account to start, and a written audit of what each one cannot see.
+### the tools
 
 Five of twelve slots are filled.
 
@@ -31,6 +28,14 @@ Five of twelve slots are filled.
 Slot 06 is empty and stays written that way until something runs there. Is there
 something you keep checking by hand that a tool could watch for you?
 **[Ask for it in the open](https://github.com/gledach/requests).**
+
+---
+
+### why these exist
+
+Same author, different shapes. They share no stack, no interface and no release cadence.
+What they share is the promise: free, MIT licensed, installable, running on your own
+machine, no account to start, and a written audit of what each one cannot see.
 
 ---
 
@@ -111,6 +116,8 @@ no API key. Point it at your own companies by editing one gitignored file.
  /____/
 ```
 
+<sub><em>gledati (slav.): to watch. what a good analyst does before speaking.</em></sub>
+<br><br>
 <sub>
 <a href="https://gledach.de">gledach.de</a>
 &nbsp;·&nbsp;
